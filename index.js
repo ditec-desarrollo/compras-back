@@ -17,9 +17,9 @@ app.use(bodyParser.json({ limit: '20mb' }));
 
 
 const proveedoresRoutes = require("./routes/ProveedoresRoutes.js");
- const comprasRoutes = require("./routes/ComprasRoutes.js");
+const comprasRoutes = require("./routes/ComprasRoutes.js");
 const usuariosRoutes = require("./routes/usuariosRoutes.js");
-
+const adminRoutes = require("./routes/adminRoutes");
 
 
 const PORT = process.env.PORT;
@@ -37,7 +37,7 @@ app.use('/compras', comprasRoutes);
 
 app.use('/usuarios', usuariosRoutes);
 
-
+app.use('/admin', adminRoutes)
 
 
 // const options = {
@@ -51,5 +51,5 @@ app.use('/usuarios', usuariosRoutes);
 //   });
 
   app.listen(4051, () => {
-    console.log(`server listening on port 3050`);
+    console.log(`server listening on port 4051`);
   });
